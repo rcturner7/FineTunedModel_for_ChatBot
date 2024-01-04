@@ -1,0 +1,332 @@
+What Is Avalanche?
+Avalanche is an open-source platform for building decentralized applications in one interoperable, decentralized, and highly scalable ecosystem. Powered by a uniquely powerful consensus mechanism, Avalanche is the first ecosystem designed to accommodate the scale of global finance, with near-instant transaction finality.
+
+Why Choose Avalanche?
+Avalanche is Blazingly Fast.
+Avalanche employs the fastest consensus mechanism of any layer 1 blockchain. The unique consensus mechanism enables quick finality and low latency: in less than 2 seconds, your transaction is effectively processed and verified.
+
+Is Avalanche Built to Scale?
+Developers who build on Avalanche can build application-specific blockchains with complex rulesets or build on existing private or public Subnets in any language.
+Avalanche is incredibly energy-efficient and can run easily on consumer-grade hardware. The entire Avalanche network consumes the same amount of energy as 46 US households, equivalent to 0.0005% of the amount of energy consumed by Bitcoin.
+Solidity developers can build on Avalanche's implementation of the EVM straight out-of-the box, or build their own custom Virtual Machine (VM) for advanced use cases.
+
+What is Avalanche's Advanced Security?
+Avalanche consensus scales to thousands of concurrent validators without suffering performance degradation making it one of the most secure protocols for internet scaling systems.
+Permissionless and permissioned custom blockchains deployed as an Avalanche Subnets can include custom rulesets designed to be compliant with legal and jurisdictional considerations.
+
+What is the Avalanche's Primary Network?
+Avalanche is a heterogeneous network of blockchains. As opposed to homogeneous networks, where all applications reside in the same chain, heterogeneous networks allow separate chains to be created for different applications.
+
+What is the primary network of Avalanche?
+The Primary Network is a special Subnet that runs three blockchains.
+
+What are the three subnet blockchains on Avalanche?
+The Contract Chain (C-Chain)
+The Platform Chain (P-Chain)
+The Exchange Chain (X-Chain)
+
+What happens when you run a node?
+A node can become a validator for the Primary Network by staking at least 2,000 AVAX.
+
+Can you tell me more about the Chains?
+All validators of the Primary Network are required to validate and secure the C-Chain, the P-Chain, and the X-Chain.
+
+What is the C-Chain?
+The C-Chain is an implementation of the Ethereum Virtual Machine (EVM). The C-Chain’s API supports Geth's API and supports the deployment and execution of smart contracts written in Solidity.
+
+What is the C-Chain an instance of?
+The C-Chain is an instance of the Coreth Virtual Machine.
+
+What is the P-Chain?
+The P-Chain is responsible for all validator and Subnet-level operations. The P-Chain API supports the creation of new blockchains and Subnets, the addition of validators to Subnets, staking operations, and other platform-level operations.
+
+What is the P-Chain an instance of?
+The P-Chain is an instance of the Platform Virtual Machine.
+
+What is the X-Chain?
+The X-Chain is responsible for operations on digital smart assets known as Avalanche Native Tokens. A smart asset is a representation of a real-world resource (for example, equity, or a bond) with sets of rules that govern its behavior, like "can’t be traded until tomorrow." The X-Chain API supports the creation and trade of Avalanche Native Tokens.
+
+What asset is trading on the X-Chain?
+One asset traded on the X-Chain is AVAX. When you issue a transaction to a blockchain on Avalanche, you pay a fee denominated in AVAX.
+
+What is the X-Chain an instance of?
+The X-Chain is an instance of the Avalanche Virtual Machine (AVM).
+
+How can you explain the Avalanche Mainnet?
+The Avalanche Mainnet refers to the main network of the Avalanche blockchain where real transactions and smart contract executions occur. It is the final and production-ready version of the blockchain where users can interact with the network and transact with real world assets.
+
+What does Avalanche Mainnet include?
+A network of networks, Avalanche Mainnet includes the Primary Network formed by the X, P, and C-Chain, as well as all in-production Subnets. These Subnets are independent blockchain sub-networks that can be tailored to specific application use cases, use their own consensus mechanisms, define their own token economics, and be run by different virtual machines.
+
+What is the Fuji Testnet?
+The Fuji Testnet serves as the official testnet for the Avalanche ecosystem.
+
+What is Fuji's infrastructure?
+Fuji's infrastructure imitates Avalanche Mainnet. It's comprised of a Primary Network formed by instances of X, P, and C-Chain, as well as many test Subnets.
+
+Why Use Fuji Over Mainnet?
+Fuji provides users with a platform to simulate the conditions found in the Mainnet environment. It enables developers to deploy demo Smart Contracts, allowing them to test and refine their applications before deploying them on the Primary Network.
+
+How can users experiment with Avalanche?
+Users interested in experimenting with Avalanche can receive free testnet AVAX, allowing them to explore the platform without any risk. These testnet tokens have no value in the real world and are only meant for experimentation purposes within the Fuji test network.
+
+How can you receive testnet tokens?
+To receive testnet tokens, users can request funds from the Avalanche Faucet.
+
+What are some Additional Considerations for the use of the Fuji net?
+Fuji Testnet has its own dedicated block explorer.
+The Public API endpoint for Fuji is not the same as Mainnet. More info is available in the Public API Server documentation.
+While Fuji Network is a valuable resource, developers also have the option to explore Avalanche Network Runner as an alternative means of locally testing their projects, ensuring comprehensive evaluation and fine-tuning before interacting with the wider network.
+
+What is the Avalanche Consensus?
+Consensus is the task of getting a group of computers (a.k.a. nodes) to come to an agreement on a decision. In blockchain, this means that all the participants in a network have to agree on the changes made to the shared ledger. This agreement is reached through a specific process, a consensus protocol, that ensures that everyone sees the same information and that the information is accurate and trustworthy.
+
+What is the Avalanche Consensus protocol?
+Avalanche Consensus is a consensus protocol that is scalable, robust, and decentralized. It combines features of both classical and Nakamoto consensus mechanisms to achieve high throughput, fast finality, and energy efficiency. For the whitepaper, see here.
+
+What are the Avalanche Key Features Include?
+Speed: Avalanche consensus provides sub-second, immutable finality, ensuring that transactions are quickly confirmed and irreversible.
+Scalability: Avalanche consensus enables high network throughput while ensuring low latency.
+Energy Efficiency: Unlike other popular consensus protocols, participation in Avalanche consensus is neither computationally intensive nor expensive.
+Adaptive Security: Avalanche consensus is designed to resist various attacks, including sybil attacks, distributed denial-of-service (DDoS) attacks, and collusion attacks. Its probabilistic nature ensures that the consensus outcome converges to the desired state, even when the network is under attack.
+
+Can you give me more information on the Consensus protocol?
+Consensus protocols in the Avalanche family operate through repeated sub-sampled voting. When a node is determining whether a transaction should be accepted, it asks a small, random subset of validator nodes for their preference. Each queried validator replies with the transaction that it prefers, or thinks should be accepted.
+If a sufficient majority of the validators sampled reply with the same preferred transaction, this becomes the preferred choice of the validator that inquired.
+In the future, this node will reply with the transaction preferred by the majority.
+The node repeats this sampling process until the validators queried reply with the same answer for a sufficient number of consecutive rounds.
+The number of validators required to be considered a "sufficient majority" is referred to as "α" (alpha).
+The number of consecutive rounds required to reach consensus, a.k.a. the "Confidence Threshold," is referred to as "β" (beta).
+Both α and β are configurable.
+When a transaction has no conflicts, finalization happens very quickly. When conflicts exist, honest validators quickly cluster around conflicting transactions, entering a positive feedback loop until all correct validators prefer that transaction. This leads to the acceptance of non-conflicting transactions and the rejection of conflicting transactions.
+Avalanche Consensus guarantees that if any honest validator accepts a transaction, all honest validators will come to the same conclusion.
+
+Can you explain some examples or intuition about the protocol?
+First, let's develop some intuition about the protocol. Imagine a room full of people trying to agree on what to get for lunch. Suppose it's a binary choice between pizza and barbecue. Some people might initially prefer pizza while others initially prefer barbecue. Ultimately, though, everyone's goal is to achieve consensus.
+Everyone asks a random subset of the people in the room what their lunch preference is. If more than half say pizza, the person thinks, "OK, looks like things are leaning toward pizza. I prefer pizza now." That is, they adopt the preference of the majority. Similarly, if a majority say barbecue, the person adopts barbecue as their preference.
+Everyone repeats this process. Each round, more and more people have the same preference. This is because the more people that prefer an option, the more likely someone is to receive a majority reply and adopt that option as their preference. After enough rounds, they reach consensus and decide on one option, which everyone prefers.
+
+What is the Snowball Algorithm?
+The intuition above outlines the Snowball Algorithm, which is a building block of Avalanche consensus. Let's review the Snowball algorithm.
+
+What are the Snowball Algorithm Parameters?
+n: number of participants
+k (sample size): between 1 and n
+α (quorum size): between 1 and k
+β (decision threshold): >= 1
+
+What are Avalanche Blocks?
+A block is a fundamental component that forms the structure of a blockchain. It serves as a container or data structure that holds a collection of transactions or other relevant information. Each block is cryptographically linked to the previous block, creating a chain of blocks, hence the term "blockchain."
+In addition to storing a reference of its parent, a block contains a set of transactions. These transactions can represent various types of information, such as financial transactions, smart contract operations, or data storage requests.
+If a node receives a vote for a block, it also counts as a vote for all of the block's ancestors (its parent, the parents' parent, etc.).
+
+What is Avalanche's Finality?
+Avalanche consensus is probabilistically safe up to a safety threshold. That is, the probability that a correct node accepts a transaction that another correct node rejects can be made arbitrarily low by adjusting system parameters. In Nakamoto consensus protocol (as used in Bitcoin and Ethereum, for example), a block may be included in the chain but then be removed and not end up in the canonical chain. This means waiting an hour for transaction settlement. In Avalanche, acceptance/rejection are final and irreversible and only take a few seconds.
+
+Can you explain Avalanche's Optimizations?
+It's not safe for nodes to just ask, "Do you prefer this block?" when they query validators. In Ava Labs' implementation, during a query a node asks, "Given that this block exists, which block do you prefer?" Instead of getting back a binary yes/no, the node receives the other node's preferred block.
+Nodes don't only query upon hearing of a new block; they repeatedly query other nodes until there are no blocks processing.
+Nodes may not need to wait until they get all k query responses before registering the outcome of a poll. If a block has already received alpha votes, then there's no need to wait for the rest of the responses.
+
+What are Avalanche Validators?
+If it were free to become a validator on the Avalanche network, that would be problematic because a malicious actor could start many, many nodes which would get queried very frequently. The malicious actor could make the node act badly and cause a safety or liveness failure. The validators, the nodes which are queried as part of consensus, have influence over the network. They have to pay for that influence with real-world value in order to prevent this kind of ballot stuffing. This idea of using real-world value to buy influence over the network is called Proof of Stake.
+To become a validator, a node must bond (stake) something valuable (AVAX). The more AVAX a node bonds, the more often that node is queried by other nodes. When a node samples the network it's not uniformly random. Rather, it's weighted by stake amount. Nodes are incentivized to be validators because they get a reward if, while they validate, they're sufficiently correct and responsive.
+Avalanche doesn't have slashing. If a node doesn't behave well while validating, such as giving incorrect responses or perhaps not responding at all, its stake is still returned in whole, but with no reward. As long as a sufficient portion of the bonded AVAX is held by correct nodes, then the network is safe, and is live for virtuous transactions.
+
+What are Avalanche's two Big Ideas?
+Two big ideas in Avalanche are subsampling and transitive voting.
+
+What is Subsampling?
+Subsampling has low message overhead. It doesn't matter if there are twenty validators or two thousand validators; the number of consensus messages a node sends during a query remains constant.
+
+What is transitive voting?
+Transitive voting, where a vote for a block is a vote for all its ancestors, helps with transaction throughput. Each vote is actually many votes in one.
+
+Are there any Loose Ends?
+Transactions are created by users which call an API on an AvalancheGo full node or create them using a library such as AvalancheJS.
+
+On the Avalanche blockchain, can you provide me with Other Observations?
+Conflicting transactions are not guaranteed to be live. That's not really a problem because if you want your transaction to be live then you should not issue a conflicting transaction.
+
+What is Snowman?
+Snowman is the name of Ava Labs' implementation of the Avalanche consensus protocol for linear chains.
+
+What happens if there are no undecided transactions in Avalanche?
+If there are no undecided transactions, the Avalanche consensus protocol quiesces. That is, it does nothing if there is no work to be done. This makes Avalanche more sustainable than Proof-of-work where nodes need to constantly do work.
+
+Does Avalanche network have leadersd?
+Avalanche has no leader. Any node can propose a transaction and any node that has staked AVAX can vote on every transaction, which makes the network more robust and decentralized.
+
+Why Do We Care?
+Avalanche is a general consensus engine. It doesn't matter what type of application is put on top of it. The protocol allows the decoupling of the application layer from the consensus layer. If you're building a dapp on Avalanche then you just need to define a few things, like how conflicts are defined and what is in a transaction. You don't need to worry about how nodes come to an agreement. The consensus protocol is a black box that put something into it and it comes back as accepted or rejected.
+
+Can Avalanche be used for more than P2P payment networks?
+Avalanche can be used for all kinds of applications, not just P2P payment networks. Avalanche's Primary Network has an instance of the Ethereum Virtual Machine, which is backward compatible with existing Ethereum Dapps and dev tooling. The Ethereum consensus protocol has been replaced with Avalanche consensus to enable lower block latency and higher throughput.
+Avalanche is very performant. It can process thousands of transactions per second with one to two second acceptance latency.
+
+Can you give me a summary of the Avalanche network?
+Avalanche consensus is a radical breakthrough in distributed systems. It represents as large a leap forward as the classical and Nakamoto consensus protocols that came before it. Now that you have a better understanding of how it works, check out other documentations for building game-changing Dapps and financial instruments on Avalanche.
+
+What is AVAX token ticker?
+AVAX is the native utility token of Avalanche. It’s a hard-capped, scarce asset that is used to pay for fees, secure the platform through staking, and provide a basic unit of account between the multiple Subnets created on Avalanche
+
+What is nAVAX?
+1 nAVAX is equal to 0.000000001 AVAX.
+
+How many nAVAX makes 1 AVAX?
+It takes 1,000,000,000.
+
+What is the english term of 1,000,000,000?
+1 billion.
+
+How many nAVAX is equal to 1 AVAX?
+1 billion nAVAX is equal to 1 AVAX.
+
+What is the Avalanche utility?
+AVAX is a capped-supply (up to 720M) resource in the Avalanche ecosystem that's used to power the network. AVAX is used to secure the ecosystem through staking and for day-to-day operations like issuing transactions.
+
+What does AVAX represent in the network?
+AVAX represents the weight that each node has in network decisions. No single actor owns the Avalanche Network, so each validator in the network is given a proportional weight in the network's decisions corresponding to the proportion of total stake that they own through proof of stake (PoS).
+
+Are there any transaction fees?
+Any entity trying to execute a transaction on Avalanche pays a corresponding fee (commonly known as "gas") to run it on the network. The fees used to execute a transaction on Avalanche is burned, or permanently removed from circulating supply.
+
+What are the tokenomics of Avalanche?
+A fixed amount of 360M AVAX was minted at genesis, but a small amount of AVAX is constantly minted as a reward to validators. The protocol rewards validators for good behavior by minting them AVAX rewards at the end of their staking period. The minting process offsets the AVAX burned by transactions fees. While AVAX is still far away from its supply cap, it will almost always remain an inflationary asset.
+Avalanche does not take away any portion of a validator's already staked tokens (commonly known as "slashing") for negligent/malicious staking periods, however this behavior is disincentivized as validators who attempt to do harm to the network would expend their node's computing resources for no reward.
+
+What will the total capped supply of AVAX tokens be?
+720 million tokens or 720,000,000 tokens.
+
+What Is a Subnet?
+A Subnet is a sovereign network which defines its own rules regarding its membership and token economics. It is composed of a dynamic subset of Avalanche validators working together to achieve consensus on the state of one or more blockchains. Each blockchain is validated by exactly one Subnet, while a Subnet can validate many blockchains.
+
+Can you tell me more about Avalanche's Primary network?
+Avalanche's Primary Network is a special Subnet running three blockchains.
+
+What are the 3 blockchains or subnets?
+The Platform Chain (P-Chain)
+The Contract Chain (C-Chain)
+The Exchange Chain (X-Chain)
+
+What happens when node operators validate a Subnet?
+Node operators that validate a Subnet with multiple chains do not need to run multiple machines for validation. For example, the Primary Network is a Subnet with three coexisting chains, all of which can be validated by a single node, or a single machine.
+
+What are some advantages?
+Independent Networks and Native Interoperability are some advantages?
+
+What is an explanation of Independent Networks inside the Avalanche network?
+Subnets use virtual machines to specify their own execution logic, determine their own fee regime, maintain their own state, facilitate their own networking, and provide their own security.
+Each Subnet's performance is isolated from other Subnets in the ecosystem, so increased usage on one Subnet won't affect another.
+Subnets can have their own token economics with their own native tokens, fee markets, and incentives determined by the Subnet deployer.
+One Subnet can host multiple blockchains with customized virtual machines.
+
+What is an explanation of Native Interoperability inside the Avalanche network?
+Avalanche Warp Messaging enables native cross-Subnet communication and allows Virtual Machine (VM) developers to implement arbitrary communication protocols between any two Subnets.
+Accommodate Application-Specific Requirements
+Different blockchain-based applications may require validators to have certain properties such as large amounts of RAM or CPU power.
+A Subnet could require that validators meet certain hardware requirements so that the application doesn’t suffer from low performance due to slow validators.
+Launch a Network Designed With Compliance In Mind
+Avalanche’s Subnet architecture makes regulatory compliance manageable. As mentioned above, a Subnet may require validators to meet a set of requirements.
+
+What are some examples of requirements the creators of a Subnet may choose include?
+Validators must be located in a given country.
+Validators must pass KYC/AML checks.
+Validators must hold a certain license.
+Control The Privacy of On-Chain Data
+Subnets are ideal for organizations interested in keeping their information private.
+Institutions conscious of their stakeholders' privacy can create a private Subnet where the contents of the blockchains would be visible only to a set of pre-approved validators. Define this at creation with a single parameter.
+
+Do Validators have any kind of Validator Sovereignty within the network?
+In a heterogeneous network of blockchains, some validators will not want to validate certain blockchains because they simply have no interest in those blockchains.
+
+Do Validators get a choice which subnet blockchains they validate?
+The Subnet model enables validators to concern themselves only with blockchain networks they choose to participate in. This greatly reduces the computational burden on validators.
+
+What happens when you Develop Your Own Subnet?
+Subnets on Avalanche are deployed by default with Subnet-EVM, a fork of go-ethereum. It implements the Ethereum Virtual Machine and supports Solidity smart contracts as well as most other Ethereum client functionality.
+
+Can you explain the Virtual Machines on Avalanche?
+In a nutshell, a Virtual Machine (VM) is the blueprint for a blockchain, meaning it defines the application-level logic of a blockchain. In technical terms, it specifies the blockchain’s state, state transition function, transactions, and the API through which users can interact with the blockchain.
+You can use the same VM to create many blockchains, each of which follows the same rule-set but is independent of all others.
+
+Why Run a VM on Avalanche?
+Developers with advanced use-cases for utilizing distributed ledger technology are often forced to build their own blockchain from scratch, re-implement complex abstractions like networking and consensus, all before even being able to start working on their new application.
+
+Can developers create their own Virtual Machine?
+With Avalanche developers can create a VM that defines how their blockchain should behave, and use this blueprint to coordinate validators in the network to run the application.
+
+What programming languages can Virtual Machines be written in when creating a subnet within the Avalanche network?
+VMs can be written in any language, and use libraries and tech stacks that its creator is familiar with. Developers have fine control over the behavior of their blockchain, and can redefine the rules of a blockchain to fit any use-case they have.
+
+What are the details of creating your own subnet?
+Developers don't need to concern themselves with lower-level logic like networking, consensus, and the structure of the blockchain. Avalanche does this behind the scenes so you can focus on building your Dapp, your ecosystem, and your community.
+
+How do VMs Work?
+VMs communicate with Avalanche over a language agnostic request-response protocol known as RPC. This allows the VM framework to open a world of endless possibilities, as developers can implement their Dapps using the languages, frameworks, and libraries of their choice. To get started, create a VM out-of-the-box with the Subnet-EVM in Solidity, or design a custom VM with languages like Golang, Rust, and many more.
+
+What VM's are the validators required to run?
+All Avalanche validators as members of the Avalanche Primary Network are required to run three VMs.
+
+What are the three Virtual Machines validators are required to run?
+Coreth: Defines the Contract Chain (C-Chain); supports smart contract functionality and is EVM-compatible.
+Platform VM: Defines the Platform Chain (P-Chain); supports operations on staking and Subnets.
+Avalanche VM: Defines the Exchange Chain (X-Chain); supports operations on Avalanche Native Tokens.
+All three can easily be run on any computer with AvalancheGo.
+
+What else can validators install?
+Validators can install additional VMs on their node to validate additional Subnets in the Avalanche ecosystem. In exchange, validators receive staking rewards in the form of a reward token determined by the Subnets.
+
+Does Avalanche support Solidity?
+Avalanche natively supports the execution of Ethereum smart contracts written in solidity. Ethereum developers have the option of deploying their smart contracts on the C-Chain's implementation of the Ethereum Virtual Machine (Coreth), or on their own Subnet using the Subnet-EVM for advanced use cases that require more customization.
+
+What EVM and/or chains compatible with Ethereum tooling?
+Both C-Chain and the Subnet-EVM are compatible with Ethereum tooling like Remix, Core, MetaMask, thirdweb, and more.
+
+What are languages and examples of VM's that have been built to run smart contracts?
+Golang:
+-Coreth:
+An implementation of the EVM that powers the Avalanche C-Chain that supports Solidity smart contracts.
+-Subnet-EVM:
+An implementation of the EVM that can be deployed to a custom Subnet to support Solidity smart contracts
+-TimestampVM:
+A decentralized timestamp server
+-XSVM:
+An example of Avalanche Warp Messaging that implements Cross-Subnet asset transfers
+See here for a tutorial on How to Build a Simple Golang VM
+
+Rust:
+-The following VMs were built using Rust via the Avalanche Rust SDK
+-TimestampVM RS:
+A Rust implementation of TimestampVM
+
+What is Avalanche Warp Messaging?
+Avalanche Warp Messaging (AWM) enables native cross-Subnet communication and allows Virtual Machine (VM) developers to implement arbitrary communication protocols between any two Subnets.
+
+What are the Avalanche Warp Messaging Use Cases?
+Use cases for AWM may include but is not limited to:
+Oracle Networks: Connecting a Subnet to an oracle network is a costly process. AWM makes it easy for oracle networks to broadcast their data from their origin chain to other Subnets.
+Token transfers between Subnets
+State Sharding between multiple Subnets
+Elements of Cross-Subnet Communication
+
+What are the communication of the following four steps?
+The 4 steps of communications are message signing, signature aggregation, message delivery, signature verification.
+
+What is the Signing Messages on the Origin Subnet step?
+AWM is a low-level messaging protocol. Any type of data encoded in an array of bytes can be included in the message sent to another Subnet. AWM uses the BLS signature scheme, which allows message recipients to verify the authenticity of these messages. Therefore, every validator on the Avalanche network holds a BLS key pair, consisting of a private key for signing messages and a public key that others can use to verify the signature.
+
+What is the Signature Aggregation on the Origin Subnet step?
+If the validator set of a Subnet is very large, this would result in the Subnet's validators sending many signatures between them. One of the powerful features of BLS is the ability to aggregate many signatures of different signers in a single multi-signature. Therefore, validators of one Subnet can now individually sign a message and these signatures are then aggregated into a short multi-signature that can be quickly verified.
+
+What is the Delivery of Messages to the Destination Subnet step?
+The messages do not pass through a central protocol or trusted entity, and there is no record of messages sent between Subnets on the primary network. This avoids a bottleneck in Subnet-to-Subnet communication, and non-public Subnets can communicate privately.
+It is up to the Subnets and their users to determine how they want to transport data from the validators of the origin Subnet to the validators of the destination Subnet and what guarantees they want to provide for the transport.
+
+What is the 4th step Verification of Messages in the Destination Subnet?
+When a Subnet wants to process another Subnet's message, it will look up both BLS Public Keys and stake of the origin Subnet. The authenticity of the message can be verified using these public keys and the signature.
+The combined weight of the validators that must be part of the BLS multi-signature to be considered valid can be set according to the individual requirements of each Subnet-to-Subnet communication. Subnet A may accept messages from Subnet B that are signed by at least 70% of stake. Messages from Subnet C are only accepted if they have been signed by validators that account for 90% of the stake.
+Since both the public keys and stake weights of all validators are recorded on the primary network's P-chain, they are readily accessible to any virtual machine run by the validators. Therefore, the Subnets do not need to communicate with each other about changes in their respective sets of validators, but can simply rely on the latest information on the P-Chain. Therefore, AWM introduces no additional trust assumption other than that the validators of the origin Subnet are participating honestly.
+
+What is the reference of implementation?
+A Proof-of-Concept VM called XSVM was created to demonstrate the power of AWM. XSVM enables simple AWM transfers between any two Subnets if run out-of-the-box.
